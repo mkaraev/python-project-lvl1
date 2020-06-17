@@ -19,4 +19,3 @@ def ask_question_and_read_answer(question):
     print_message(question)
     answer = prompt.string("Your answer: ")
     return answer.lower()
-

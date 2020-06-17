@@ -11,7 +11,8 @@ def run(game):
         user_answer = cli.ask_question_and_read_answer(question)
         if user_answer != answer:
             win = False
-            message = f"\'{user_answer}\' is wrong answer ;(. Correct answer was \'{answer}\'.\n" \
+            message = f"\'{user_answer}\' is wrong answer ;(. " \
+                      f"Correct answer was \'{answer}\'.\n" \
                       f"Let\'s try again, {player_name}!"
             cli.print_message(message)
             break
