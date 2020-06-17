@@ -1,5 +1,4 @@
 import random
-import math
 
 DESCRIPTION = "What number is missing in the progression?"
 
@@ -21,4 +20,4 @@ def generate_question_answer_pair():
     progression[index] = ".."
     answer = str(missed_value)
 
-    return f"Question: " + " ".join(progression), answer
+    return "Question: " + " ".join(progression), answer
