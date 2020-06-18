@@ -8,7 +8,6 @@ def _generate_random_expression():
     b = random.randint(0, 10)
     op = random.choice(["+", "-", "*"])
     expr = f"{a} {op} {b}"
-
     return expr
 
 

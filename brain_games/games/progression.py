@@ -15,7 +15,6 @@ def generate_question_answer_pair():
     progression = [str(number) for number in progression]
     progression[index] = ".."
     answer = str(missed_value)
-
     return " ".join(progression), answer
 
 

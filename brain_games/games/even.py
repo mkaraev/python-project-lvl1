@@ -10,5 +10,4 @@ def _is_even(number):
 def generate_question_answer_pair():
     number = random.randint(0, 1000)
     answer = "yes" if _is_even(number) else "no"
-
     return str(number), answer
