@@ -11,7 +11,8 @@ def generate_question_answer_pair():
     nums = [_generate_random_prime(), random.randint(0, 1000)]
     random_number = random.choice(nums)
     answer = "yes" if random_number in primes else "no"
-    return f"Question: {random_number}", answer
+
+    return f"{random_number}", answer
 
 
 def _generate_random_prime():

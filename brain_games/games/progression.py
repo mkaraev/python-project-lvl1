@@ -1,23 +1,32 @@
 import random
 
 DESCRIPTION = "What number is missing in the progression?"
-
-
-def _generate_progression():
-    a = random.randint(1, 10)
-    d = random.randint(1, 10)
-    values = []
-    for i in range(10):
-        values.append(a + d * i)
-    return values
+PROGRESSION_LENGTH = 10
 
 
 def generate_question_answer_pair():
-    progression = _generate_progression()
-    index = random.choice(range(10))
+    global PROGRESSION_LENGTH
+
+    first, difference = _generate_progression_params()
+    progression = _generate_progression(first, difference, PROGRESSION_LENGTH)
+    index = random.choice(range(len(progression)))
     missed_value = progression[index]
+
     progression = [str(number) for number in progression]
     progression[index] = ".."
     answer = str(missed_value)
 
-    return "Question: " + " ".join(progression), answer
+    return " ".join(progression), answer
+
+
+def _generate_progression(first, difference, length):
+    values = []
+    for i in range(length):
+        values.append(first + difference * i)
+    return values
+
+
+def _generate_progression_params():
+    first = random.randint(0, 10)
+    difference = random.randint(0, 10)
+    return first, difference
