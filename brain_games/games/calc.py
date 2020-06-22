@@ -3,6 +3,12 @@ import random
 DESCRIPTION = "What is the result of the expression?"
 
 
+def generate_question_answer():
+    expr = _generate_random_expression()
+    answer = str(_calc(expr))
+    return expr, answer
+
+
 def _generate_random_expression():
     a = random.randint(0, 10)
     b = random.randint(0, 10)
@@ -11,8 +17,13 @@ def _generate_random_expression():
     return expr
 
 
-def generate_question_answer_pair():
-    expr = _generate_random_expression()
-    answer = str(eval(expr))
-
-    return expr, answer
+def _calc(expression):
+    a, op, b = expression.split()
+    a = int(a)
+    b = int(b)
+    if op == '+':
+        return a + b
+    if op == '-':
+        return a - b
+    if op == '*':
+        return a * b
