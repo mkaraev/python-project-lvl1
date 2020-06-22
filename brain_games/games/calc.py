@@ -4,9 +4,9 @@ DESCRIPTION = "What is the result of the expression?"
 
 
 def generate_question_answer():
-    expr = _generate_random_expression()
-    answer = str(_calc(expr))
-    return expr, answer
+    question = _generate_random_expression()
+    answer = str(_calc(question))
+    return question, answer
 
 
 def _generate_random_expression():
