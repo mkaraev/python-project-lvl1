@@ -1,12 +1,5 @@
 import random
-
-DESCRIPTION = "What is the result of the expression?"
-
-
-def generate_question_answer():
-    question = _generate_random_expression()
-    answer = str(_calc(question))
-    return question, answer
+from brain_games.games.base import Game, Round
 
 
 def _generate_random_expression():
@@ -27,3 +20,17 @@ def _calc(expression):
         return a - b
     if op == '*':
         return a * b
+
+
+class CalcGame(Game):
+    def __init__(self):
+        self.DESCRIPTION = "What is the result of the expression?"
+
+    def generate_round(self) -> Round:
+        question = _generate_random_expression()
+        answer = str(_calc(question))
+        return Round(question, answer)
+
+    @property
+    def description(self) -> str:
+        return self.DESCRIPTION
